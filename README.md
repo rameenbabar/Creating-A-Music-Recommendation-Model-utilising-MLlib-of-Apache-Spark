@@ -23,3 +23,20 @@ To address the dataset's considerable size and ensure scalability and accessibil
 
 ## Music Recommendation Model
 In our Music Recommendation System, we seamlessly integrate MongoDB and Apache Spark to develop an efficient and scalable recommendation model.  Leveraging Spark's capabilities, we employ its DataFrame API to seamlessly interface with MongoDB, enabling us to load the audio features directly into Spark for further processing. We utilize advanced techniques such as Locality Sensitive Hashing (LSH) within Apache Spark to develop an efficient recommendation model. LSH is a powerful algorithm for approximate nearest neighbor search, enabling us to efficiently identify similar items within our dataset. By leveraging LSH within Apache Spark, our recommendation model efficiently identifies similar tracks in our dataset, paving the way for personalized music recommendations tailored to each user's preferences.
+
+### Locality Sensitive Hashing(LSH) within Apache Spark
+To implement LSH, we start by normalizing the audio features using MinMaxScaler, ensuring that each feature is within a consistent range for accurate comparison. Next, we employ the BucketedRandomProjectionLSH algorithm, a variant of LSH, to hash the normalized feature vectors into buckets based on their similarity. By tuning parameters such as bucket length and the number of hash tables, we control the trade-off between computational efficiency and accuracy in similarity detection.
+
+With LSH in place, we perform a self-join operation on the dataset to find similar tracks. This involves comparing each track's feature vector with every other track's vector to identify potential matches based on their proximity in the hashed space. The resulting similarity DataFrame captures pairs of tracks deemed similar according to a specified threshold, typically based on Euclidean distance.
+
+### How does Euclidean Distance measure similarity?
+Euclidean distance is commonly used in many machine learning algorithms, particularly when dealing with vector spaces, because of its intuitive geometrical interpretation. It's effective for problems where the magnitudes of the attribute vectors are important. Here’s why it's suitable for our music recommendation system:
+
+**Intuitive Interpretation:** The closer the vectors are, the smaller the Euclidean distance, indicating higher similarity.
+
+**Effectiveness with MFCCs and Other Audio Features:** For audio tracks, features like MFCCs capture aspects related to pitch and timbre, where differences can often be effectively quantified using linear distances.
+
+**Symmetry:** Euclidean distance is symmetric, meaning the distance from track A to track B is the same as from B to A, as reflected in your output.
+
+
+
