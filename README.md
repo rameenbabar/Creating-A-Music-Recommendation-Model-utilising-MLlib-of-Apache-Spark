@@ -36,7 +36,7 @@ Euclidean distance is commonly used in many machine learning algorithms, particu
 
 **Effectiveness with MFCCs and Other Audio Features:** For audio tracks, features like MFCCs capture aspects related to pitch and timbre, where differences can often be effectively quantified using linear distances.
 
-**Symmetry:** Euclidean distance is symmetric, meaning the distance from track A to track B is the same as from B to A, as reflected in your output.
+**Symmetry:** Euclidean distance is symmetric, meaning the distance from track A to track B is the same as from B to A.
 
 
 
