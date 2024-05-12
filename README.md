@@ -38,5 +38,11 @@ Euclidean distance is commonly used in many machine learning algorithms, particu
 
 **Symmetry:** Euclidean distance is symmetric, meaning the distance from track A to track B is the same as from B to A.
 
+### Hyperparameter Tuning
+Hyperparameter tuning in machine learning involves finding the set of optimal parameters for a model that are not learned directly from the data during training. These parameters, known as hyperparameters, govern the training process itself and can significantly affect the performance of the model. In the context of your music recommendation system using the **BucketedRandomProjectionLSH** in PySpark, hyperparameter tuning involves adjusting parameters such as **bucketLength and numHashTables**. These are critical in determining how the hashing for the **Locality-Sensitive Hashing (LSH)** algorithm is performed, which in turn affects the ability to find similar items efficiently.
 
+### How Hyperparameter tuning makes the model better?
 
+**BucketLength:** This parameter defines the width of the buckets into which data points are hashed. Smaller bucket lengths can lead to finer partitions, which may increase the precision of finding true neighbors but might miss some near ones. Larger bucket lengths might hash more distinct points into the same buckets, increasing recall but also false positives. Optimal bucket length ensures that similar items are hashed to the same bucket with higher probability while keeping the dissimilar ones apart, balancing the trade-offs between precision and recall.
+
+**NumHashTables:** This parameter specifies the number of hash tables used in LSH. Increasing the number of hash tables can increase the chance of finding true nearest neighbors as each hash table provides another chance of hashing close neighbors into the same bucket. While more hash tables can improve recall by reducing the chance of missing true similar pairs, it also increases computational resources and query time, creating a trade-off between accuracy and performance.
