@@ -46,3 +46,5 @@ Hyperparameter tuning in machine learning involves finding the set of optimal pa
 **BucketLength:** This parameter defines the width of the buckets into which data points are hashed. Smaller bucket lengths can lead to finer partitions, which may increase the precision of finding true neighbors but might miss some near ones. Larger bucket lengths might hash more distinct points into the same buckets, increasing recall but also false positives. Optimal bucket length ensures that similar items are hashed to the same bucket with higher probability while keeping the dissimilar ones apart, balancing the trade-offs between precision and recall.
 
 **NumHashTables:** This parameter specifies the number of hash tables used in LSH. Increasing the number of hash tables can increase the chance of finding true nearest neighbors as each hash table provides another chance of hashing close neighbors into the same bucket. While more hash tables can improve recall by reducing the chance of missing true similar pairs, it also increases computational resources and query time, creating a trade-off between accuracy and performance.
+
+## Web Deployment
