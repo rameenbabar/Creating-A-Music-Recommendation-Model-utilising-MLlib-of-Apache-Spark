@@ -47,4 +47,3 @@ Hyperparameter tuning in machine learning involves finding the set of optimal pa
 
 **NumHashTables:** This parameter specifies the number of hash tables used in LSH. Increasing the number of hash tables can increase the chance of finding true nearest neighbors as each hash table provides another chance of hashing close neighbors into the same bucket. While more hash tables can improve recall by reducing the chance of missing true similar pairs, it also increases computational resources and query time, creating a trade-off between accuracy and performance.
 
-## Web Deployment
