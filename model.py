@@ -14,7 +14,6 @@ spark = SparkSession.builder \
 # Load data from MongoDB
 df = spark.read.format("mongo").load()
 
-# Assuming 'features' is already a list in MongoDB documents and needs conversion to vector
 vector_udf = udf(lambda x: Vectors.dense(x), VectorUDT())
 df = df.withColumn("features_vector", vector_udf(df.features))
 
@@ -27,7 +26,7 @@ df = model.transform(df)
 df = df.withColumn("id", monotonically_increasing_id())
 
 # Setup LSH model for feature vectors
-bucket_length = 2.0  # Adjust this based on the distribution of your data
+bucket_length = 1.0 
 num_hash_tables = 3  # More tables increase the probability of hash collisions
 brp = BucketedRandomProjectionLSH(inputCol="scaledFeatures", outputCol="hashes", bucketLength=bucket_length, numHashTables=num_hash_tables)
 model = brp.fit(df)
