@@ -4,8 +4,6 @@ from pyspark.ml.linalg import Vectors, VectorUDT
 from pyspark.sql.functions import col, udf, monotonically_increasing_id
 
 def evaluate_model(model, data):
-    # Implement a function to evaluate the model based on your requirements.
-    # For example, you could calculate the average Euclidean distance in the approximate similarity join results.
     transformed_data = model.transform(data)
     similarity_df = model.approxSimilarityJoin(transformed_data, transformed_data, threshold=0.5, distCol="EuclideanDistance") \
                           .filter("datasetA.id != datasetB.id") \
