@@ -11,7 +11,6 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["audio_files"]
 collection = db["features"]
 
-# Define the root directory containing nested folders of audio files
 audio_dir = 'audios'
 
 def load_audio_files(audio_directory):
