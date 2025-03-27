@@ -1,0 +1,14 @@
+# Core
+numpy
+pandas
+librosa
+pymongo
+
+# Machine Learning & Preprocessing
+scikit-learn
+
+# Apache Spark integration (PySpark)
+pyspark
+
+# Web App (Flask)
+Flask
