@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Stream</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d5855;
+            color: #fff;
+        }
+        .container {
+            padding-top: 20px;
+        }
+        .card {
+            background-color: #181818;
+            border: none;
+        }
+        .card-header, .card-body {
+            background-color: #282828;
+        }
+        .navbar {
+            background-color: #000;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .track-list {
+            color: #b3b3b3;
+            margin-bottom: 0;
+        }
+        .track-item {
+            border-bottom: 1px solid rgb(245, 245, 245);
+            padding: 10px 0;
+        }
+        .track-item:last-child {
+            border-bottom: none;
+        }
+        audio {
+            width: 100%; /* Makes the audio player fit the container */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">SoundScape</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Your Music</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">Songs</h1>
+        <div class="card">
+            <div class="card-header">
+                Playlist
+            </div>
+            <ul class="list-group list-group-flush track-list">
+                {% for audio_file in audio_files %}
+                <li class="list-group-item track-item">
+                    <span class="track-title">{{ audio_file.split('/')[-1].split('.')[0] }}</span>
+                    <audio controls>
+                        <source src="{{ url_for('static', filename=audio_file) }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
