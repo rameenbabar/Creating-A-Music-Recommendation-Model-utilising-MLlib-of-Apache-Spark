@@ -1,14 +1,19 @@
-# Core
+# Core Libraries
 numpy
 pandas
+
+# Audio Feature Extraction
 librosa
-pymongo
+soundfile     # Required by librosa for loading mp3/wav files
 
 # Machine Learning & Preprocessing
 scikit-learn
 
-# Apache Spark integration (PySpark)
+# MongoDB Integration
+pymongo
+
+# Apache Spark
 pyspark
 
-# Web App (Flask)
+# Web Application
 Flask
