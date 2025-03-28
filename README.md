@@ -67,8 +67,8 @@ Stored as numeric vectors in MongoDB.
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/Creating-A-Music-Recommendation-Model-utilising-Apache-Spark's-MLlib.git
-cd Creating-A-Music-Recommendation-Model-utilising-Apache-Spark's-MLlib
+git clone https://github.com/yourusername/Creating-A-Music-Recommendation-Model-utilising-MLlib-of-Apache-Spark.git
+cd Creating-A-Music-Recommendation-Model-utilising-MLlib-of-Apache-Spark
 ```
 
 2. **Install Dependencies**
