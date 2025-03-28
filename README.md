@@ -86,6 +86,7 @@ python src/store_featuresto_mongodb.py
 4.**Train the Recommendation Model**
 
 ```bash
+python src/tune_model.py
 python src/build_model.py
 ```
 5.**Launch the Web App**
