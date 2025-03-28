@@ -79,19 +79,18 @@ pip install -r requirements.txt
 3. **Run Feature Extraction**
 
 ```bash
-python feature_engineering/audio_feature_extractor.py
-python feature_engineering/store_features_mongo.py
+python src/audio_feature_extractor.py
+python src/store_featuresto_mongodb.py
 ```
 
 4.**Train the Recommendation Model**
 
 ```bash
-python recommendation_engine/build_model.py
+python src/build_model.py
 ```
 5.**Launch the Web App**
 ```bash
-cd web_app
-python app.py
+python src/app.py
 ```
 ## Output
 **MongoDB:** Stores processed feature vectors
